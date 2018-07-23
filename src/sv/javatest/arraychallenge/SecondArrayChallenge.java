@@ -18,6 +18,8 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 package sv.javatest.arraychallenge;
 
+import java.util.Arrays;
+
 /**
  * @author svishwakarma
  *
@@ -35,8 +37,24 @@ public class SecondArrayChallenge {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int[] weeklyStockPrice = {7,6,4,3,1};//{7,1,5,3,6,4}; 
+		System.out.println("Input: "+ Arrays.toString(weeklyStockPrice));
+		SecondArrayChallenge sac = new SecondArrayChallenge();
+		System.out.println("Output: "+sac.findMaximumProfitOnWeeklyStock(weeklyStockPrice));
+	}
+	
+	public int findMaximumProfitOnWeeklyStock(int[] weeklyStockPrice) {
+		int maxprofit = 0;
+		
+		for(int i = 0; i < weeklyStockPrice.length -2; i ++) {
+			for(int j = i +1; j < weeklyStockPrice.length -1; j++) {
+				if(weeklyStockPrice[j] - weeklyStockPrice[i] > maxprofit) {
+					maxprofit = weeklyStockPrice[j] - weeklyStockPrice[i];
+				}
+			}
+		}
+		
+		return maxprofit;
 	}
 
 }
