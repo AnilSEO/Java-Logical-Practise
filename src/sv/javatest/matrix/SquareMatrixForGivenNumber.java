@@ -32,12 +32,12 @@ public class SquareMatrixForGivenNumber {
 			if(i % 2 == 0) {
 				for(int j = i*matrixSize, k = 1; k <= matrixSize; k++) {
 					System.out.print(j--);
-					System.out.print(" ");
+					System.out.print("   ");
 				}
 			} else {
 				for(int j = (i * matrixSize - matrixSize ) + 1, k =1; k <= matrixSize; k++) {
 					System.out.print(j++);
-					System.out.print(" ");
+					System.out.print("   ");
 				}
 			}
 			System.out.println();
